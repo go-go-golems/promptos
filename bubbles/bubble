@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "// interface for the charmbracelet $1 bubble"
+
+oak go definitions --recurse charmbracelet/bubbles/$1 --only-public | grep -P -v '^[\s\t]+[a-z]'

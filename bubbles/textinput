@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+prompto get bubbles/bubble textinput
+

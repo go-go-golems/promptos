@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Set the directory path
+DIR_PATH="charmbracelet/bubbletea/examples"
+
+# Function to list all directories
+list_directories() {
+    for d in "$DIR_PATH"/*/ ; do
+        basename "$d"
+    done
+}
+
+# Main logic
+if [ "$#" -eq 0 ]; then
+    list_directories
+else
+    DIRECTORY="$1"
+    if [ -d "$DIR_PATH/$DIRECTORY" ]; then
+        oak go definitions --recurse "$DIR_PATH/$DIRECTORY" --with-body
+    else
+        echo "Directory '$DIRECTORY' not found in '$DIR_PATH'."
+        exit 2
+    fi
+fi
