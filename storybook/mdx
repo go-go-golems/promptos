@@ -1,0 +1,80 @@
+# MDX v2 reference
+
+This is the description of the new MDX v2. Don't use your previous knowledge about MDX v1, just this documentation.
+
+- Mix of Markdown and JSX for interactive documentation
+- Used in Storybook for component documentation
+
+## Writing MDX Stories
+
+- Import `Canvas` and `Meta` from `@storybook/blocks`
+- Document stories by referencing imported stories with Meta and Canvas block
+- Don't use the old `Story` and `<Meta name=...>` 
+- Don't use ArgsTable
+
+```
+import { Canvas, Meta } from '@storybook/blocks';
+import * as CheckboxStories from './Checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+<Canvas of={CheckboxStories.Unchecked} />
+```
+
+- Reference to Component Story Format (CSF) file: `Checkbox.stories.js|ts`
+
+```
+import type { Meta, StoryObj } from '@storybook/your-framework';
+import { Checkbox } from './Checkbox';
+
+export default meta;
+export const Unchecked: Story = {
+  args: {
+    label: 'Unchecked',
+  },
+};
+```
+
+## Anatomy of MDX
+
+- Blocks: JSX components, Markdown, or mix
+- Comments: JSX blocks with JS comments
+- Imports: Components and stories at the beginning of MDX file
+- Meta Block: Defines document placement in sidebar, references default export of story file
+- Markdown: Standard markdown supported
+- Canvas Block: Renders specific story, references specific story from imported stories
+- Arbitrary JSX: Any React component can be used, no need to delimit them in a code block
+
+```
+{/* This is a comment in MDX */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+import * as CheckboxStories from './Checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+<Canvas of={CheckboxStories.Unchecked} />
+
+<Guidelines>
+  <Dos>
+    - Use buttons for the main actions on your page 
+    - Identify the primary action and make it `primary`
+  </Dos>
+  <Donts>
+    - Use a button when a link will do (e.g., for navigation-only actions) 
+    - Use multiple `primary` buttons in a single UI state
+  </Donts>
+</Guidelines>
+```
+
+## Linking to Other Stories
+
+- Use `path` query string to link to other stories or documentation pages
+
+```
+[Go to specific documentation page](?path=/docs/some--id)
+```
