@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "protocol:"
+echo 
+cat go-plugin/protocol.go
+
+echo "---\n\n"
+echo "config:"
+echo 
+echo "package plugin"
+oak go definitions go-plugin/client.go --only-public --name ClientConfig
+
+echo "---\n\n"
+echo "client:"
+echo 
+echo "package plugin"
+oak go definitions go-plugin/client.go --only-public --name Client | grep -v -P '^\s+[a-z]'
