@@ -132,7 +132,7 @@ func (q *Queries) ListAuthorsByIDs(ctx context.Context, ids []int64) ([]Author, 
 	sql := listAuthorsByIDs
 	var queryParams []interface{}
 	if len(ids) == 0 {
-		return nil, fmt.Errorf("slice ids must have at least one element")
+		return nil, errors.Errorf("slice ids must have at least one element")
 	}
 	for _, v := range ids {
 		queryParams = append(queryParams, v)
