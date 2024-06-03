@@ -1,1 +1,0 @@
-/home/manuel/code/others/sqlc/docs/reference/datatypes.md
