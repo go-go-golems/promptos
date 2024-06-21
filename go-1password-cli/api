@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+oak go definitions /home/manuel/code/mento/thirdparty/go-1password-cli/op/main.go

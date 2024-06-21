@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cd /home/manuel/code/others/terraform-provider-onepassword
+find docs -type f | while read i; do 
+   echo "---"
+   echo $i
+   echo ""
+   cat "$i"
+done
+

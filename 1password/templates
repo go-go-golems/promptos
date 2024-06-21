@@ -1,0 +1,1025 @@
+---
+template: Database
+fields:
+  category: DATABASE
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: database_type
+      label: type
+      type: MENU
+    - id: hostname
+      label: server
+      type: STRING
+    - id: port
+      label: port
+      type: STRING
+    - id: database
+      label: database
+      type: STRING
+    - id: username
+      label: username
+      type: STRING
+    - id: password
+      label: password
+      type: CONCEALED
+    - id: sid
+      label: SID
+      type: STRING
+    - id: alias
+      label: alias
+      type: STRING
+    - id: options
+      label: connection options
+      type: STRING
+
+---
+template: Document
+fields:
+  category: DOCUMENT
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+
+---
+template: Passport
+fields:
+  category: PASSPORT
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: type
+      label: type
+      type: STRING
+    - id: issuing_country
+      label: issuing country
+      type: STRING
+    - id: number
+      label: number
+      type: STRING
+    - id: fullname
+      label: full name
+      type: STRING
+    - id: gender
+      label: gender
+      type: STRING
+    - id: nationality
+      label: nationality
+      type: STRING
+    - id: issuing_authority
+      label: issuing authority
+      type: STRING
+    - id: birthdate
+      label: date of birth
+      type: DATE
+    - id: birthplace
+      label: place of birth
+      type: STRING
+    - id: issue_date
+      label: issued on
+      type: DATE
+    - id: expiry_date
+      label: expiry date
+      type: DATE
+
+---
+template: Password
+fields:
+  category: PASSWORD
+  fields:
+    - id: password
+      label: password
+      password_details:
+        strength: TERRIBLE
+      purpose: PASSWORD
+      type: CONCEALED
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+
+---
+template: Secure Note
+fields:
+  category: SECURE_NOTE
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+
+---
+template: Credit Card
+fields:
+  category: CREDIT_CARD
+  sections:
+    - id: details
+      label: Additional Details
+    - id: contactInfo
+      label: Contact Information
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: cardholder
+      label: cardholder name
+      type: STRING
+    - id: type
+      label: type
+      type: CREDIT_CARD_TYPE
+    - id: ccnum
+      label: number
+      type: CREDIT_CARD_NUMBER
+    - id: cvv
+      label: verification number
+      type: CONCEALED
+    - id: expiry
+      label: expiry date
+      type: MONTH_YEAR
+    - id: validFrom
+      label: valid from
+      type: MONTH_YEAR
+    - id: bank
+      label: issuing bank
+      section:
+        id: contactInfo
+        label: Contact Information
+      type: STRING
+    - id: phoneLocal
+      label: phone (local)
+      section:
+        id: contactInfo
+        label: Contact Information
+      type: PHONE
+    - id: phoneTollFree
+      label: phone (toll free)
+      section:
+        id: contactInfo
+        label: Contact Information
+      type: PHONE
+    - id: phoneIntl
+      label: phone (intl)
+      section:
+        id: contactInfo
+        label: Contact Information
+      type: PHONE
+    - id: website
+      label: website
+      section:
+        id: contactInfo
+        label: Contact Information
+      type: URL
+    - id: pin
+      label: PIN
+      section:
+        id: details
+        label: Additional Details
+      type: CONCEALED
+    - id: creditLimit
+      label: credit limit
+      section:
+        id: details
+        label: Additional Details
+      type: STRING
+    - id: cashLimit
+      label: cash withdrawal limit
+      section:
+        id: details
+        label: Additional Details
+      type: STRING
+    - id: interest
+      label: interest rate
+      section:
+        id: details
+        label: Additional Details
+      type: STRING
+    - id: issuenumber
+      label: issue number
+      section:
+        id: details
+        label: Additional Details
+      type: STRING
+
+---
+template: Login
+fields:
+  category: LOGIN
+  fields:
+    - id: username
+      label: username
+      purpose: USERNAME
+      type: STRING
+    - id: password
+      label: password
+      password_details:
+        strength: TERRIBLE
+      purpose: PASSWORD
+      type: CONCEALED
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+
+---
+template: Reward Program
+fields:
+  category: REWARD_PROGRAM
+  sections:
+    - id: extra
+      label: More Information
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: company_name
+      label: company name
+      type: STRING
+    - id: member_name
+      label: member name
+      type: STRING
+    - id: membership_no
+      label: member ID
+      type: STRING
+    - id: pin
+      label: PIN
+      type: CONCEALED
+    - id: additional_no
+      label: member ID (additional)
+      section:
+        id: extra
+        label: More Information
+      type: STRING
+    - id: member_since
+      label: member since
+      section:
+        id: extra
+        label: More Information
+      type: MONTH_YEAR
+    - id: customer_service_phone
+      label: customer service phone
+      section:
+        id: extra
+        label: More Information
+      type: PHONE
+    - id: reservations_phone
+      label: phone for reservations
+      section:
+        id: extra
+        label: More Information
+      type: PHONE
+    - id: website
+      label: website
+      section:
+        id: extra
+        label: More Information
+      type: URL
+
+---
+template: Software License
+fields:
+  category: SOFTWARE_LICENSE
+  sections:
+    - id: customer
+      label: Customer
+    - id: order
+      label: Order
+    - id: publisher
+      label: Publisher
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: product_version
+      label: version
+      type: STRING
+    - id: reg_code
+      label: license key
+      type: STRING
+    - id: reg_name
+      label: licensed to
+      section:
+        id: customer
+        label: Customer
+      type: STRING
+    - id: reg_email
+      label: registered email
+      section:
+        id: customer
+        label: Customer
+      type: EMAIL
+    - id: company
+      label: company
+      section:
+        id: customer
+        label: Customer
+      type: STRING
+    - id: download_link
+      label: download page
+      section:
+        id: publisher
+        label: Publisher
+      type: URL
+    - id: publisher_name
+      label: publisher
+      section:
+        id: publisher
+        label: Publisher
+      type: STRING
+    - id: publisher_website
+      label: website
+      section:
+        id: publisher
+        label: Publisher
+      type: URL
+    - id: retail_price
+      label: retail price
+      section:
+        id: publisher
+        label: Publisher
+      type: STRING
+    - id: support_email
+      label: support email
+      section:
+        id: publisher
+        label: Publisher
+      type: EMAIL
+    - id: order_date
+      label: purchase date
+      section:
+        id: order
+        label: Order
+      type: DATE
+    - id: order_number
+      label: order number
+      section:
+        id: order
+        label: Order
+      type: STRING
+    - id: order_total
+      label: order total
+      section:
+        id: order
+        label: Order
+      type: STRING
+
+---
+template: SSH Key
+fields:
+  category: SSH_KEY
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: private_key
+      label: private key
+      type: SSHKEY
+
+---
+template: Crypto Wallet
+fields:
+  category: CUSTOM
+  category_id: "115"
+  sections:
+    - id: wallet
+      label: Wallet
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: recoveryPhrase
+      label: recovery phrase
+      type: CONCEALED
+    - id: password
+      label: password
+      type: CONCEALED
+    - id: walletAddress
+      label: wallet address
+      section:
+        id: wallet
+        label: Wallet
+      type: STRING
+
+---
+template: Membership
+fields:
+  category: MEMBERSHIP
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: org_name
+      label: group
+      type: STRING
+    - id: website
+      label: website
+      type: URL
+    - id: phone
+      label: telephone
+      type: PHONE
+    - id: member_name
+      label: member name
+      type: STRING
+    - id: member_since
+      label: member since
+      type: MONTH_YEAR
+    - id: expiry_date
+      label: expiry date
+      type: MONTH_YEAR
+    - id: membership_no
+      label: member ID
+      type: STRING
+    - id: pin
+      label: PIN
+      type: CONCEALED
+
+---
+template: Wireless Router
+fields:
+  category: WIRELESS_ROUTER
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: name
+      label: base station name
+      type: STRING
+    - id: password
+      label: base station password
+      type: CONCEALED
+    - id: server
+      label: server / IP address
+      type: STRING
+    - id: airport_id
+      label: AirPort ID
+      type: STRING
+    - id: network_name
+      label: network name
+      type: STRING
+    - id: wireless_security
+      label: wireless security
+      type: MENU
+    - id: wireless_password
+      label: wireless network password
+      type: CONCEALED
+    - id: disk_password
+      label: attached storage password
+      type: CONCEALED
+
+---
+template: Social Security Number
+fields:
+  category: SOCIAL_SECURITY_NUMBER
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: name
+      label: name
+      type: STRING
+    - id: number
+      label: number
+      type: CONCEALED
+
+---
+template: API Credential
+fields:
+  category: API_CREDENTIAL
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: username
+      label: username
+      type: STRING
+    - id: credential
+      label: credential
+      type: CONCEALED
+    - id: type
+      label: type
+      type: MENU
+    - id: filename
+      label: filename
+      type: STRING
+    - id: validFrom
+      label: valid from
+      type: DATE
+    - id: expires
+      label: expires
+      type: DATE
+    - id: hostname
+      label: hostname
+      type: STRING
+
+---
+template: Driver License
+fields:
+  category: DRIVER_LICENSE
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: fullname
+      label: full name
+      type: STRING
+    - id: address
+      label: address
+      type: STRING
+    - id: birthdate
+      label: date of birth
+      type: DATE
+    - id: gender
+      label: gender
+      type: STRING
+    - id: height
+      label: height
+      type: STRING
+    - id: number
+      label: number
+      type: STRING
+    - id: class
+      label: license class
+      type: STRING
+    - id: conditions
+      label: conditions / restrictions
+      type: STRING
+    - id: state
+      label: state
+      type: STRING
+    - id: country
+      label: country
+      type: STRING
+    - id: expiry_date
+      label: expiry date
+      type: MONTH_YEAR
+
+---
+template: Email Account
+fields:
+  category: EMAIL_ACCOUNT
+  sections:
+    - id: Contact Information
+      label: Contact Information
+    - id: SMTP
+      label: SMTP
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: pop_type
+      label: type
+      type: MENU
+    - id: pop_username
+      label: username
+      type: STRING
+    - id: pop_server
+      label: server
+      type: STRING
+    - id: pop_port
+      label: port number
+      type: STRING
+    - id: pop_password
+      label: password
+      type: CONCEALED
+    - id: pop_security
+      label: security
+      type: MENU
+    - id: pop_authentication
+      label: auth method
+      type: MENU
+    - id: smtp_server
+      label: SMTP server
+      section:
+        id: SMTP
+        label: SMTP
+      type: STRING
+    - id: smtp_port
+      label: port number
+      section:
+        id: SMTP
+        label: SMTP
+      type: STRING
+    - id: smtp_username
+      label: username
+      section:
+        id: SMTP
+        label: SMTP
+      type: STRING
+    - id: smtp_password
+      label: password
+      section:
+        id: SMTP
+        label: SMTP
+      type: CONCEALED
+    - id: smtp_security
+      label: security
+      section:
+        id: SMTP
+        label: SMTP
+      type: MENU
+    - id: smtp_authentication
+      label: auth method
+      section:
+        id: SMTP
+        label: SMTP
+      type: MENU
+    - id: provider
+      label: provider
+      section:
+        id: Contact Information
+        label: Contact Information
+      type: STRING
+    - id: provider_website
+      label: provider's website
+      section:
+        id: Contact Information
+        label: Contact Information
+      type: STRING
+    - id: phone_local
+      label: phone (local)
+      section:
+        id: Contact Information
+        label: Contact Information
+      type: STRING
+    - id: phone_tollfree
+      label: phone (toll free)
+      section:
+        id: Contact Information
+        label: Contact Information
+      type: STRING
+
+---
+template: Identity
+fields:
+  category: IDENTITY
+  sections:
+    - id: address
+      label: Address
+    - id: name
+      label: Identification
+    - id: internet
+      label: Internet Details
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: firstname
+      label: first name
+      section:
+        id: name
+        label: Identification
+      type: STRING
+    - id: initial
+      label: initial
+      section:
+        id: name
+        label: Identification
+      type: STRING
+    - id: lastname
+      label: last name
+      section:
+        id: name
+        label: Identification
+      type: STRING
+    - id: gender
+      label: gender
+      section:
+        id: name
+        label: Identification
+      type: STRING
+    - id: birthdate
+      label: birth date
+      section:
+        id: name
+        label: Identification
+      type: DATE
+    - id: occupation
+      label: occupation
+      section:
+        id: name
+        label: Identification
+      type: STRING
+    - id: company
+      label: company
+      section:
+        id: name
+        label: Identification
+      type: STRING
+    - id: department
+      label: department
+      section:
+        id: name
+        label: Identification
+      type: STRING
+    - id: jobtitle
+      label: job title
+      section:
+        id: name
+        label: Identification
+      type: STRING
+    - id: address
+      label: address
+      section:
+        id: address
+        label: Address
+      type: ADDRESS
+    - id: defphone
+      label: default phone
+      section:
+        id: address
+        label: Address
+      type: PHONE
+    - id: homephone
+      label: home
+      section:
+        id: address
+        label: Address
+      type: PHONE
+    - id: cellphone
+      label: cell
+      section:
+        id: address
+        label: Address
+      type: PHONE
+    - id: busphone
+      label: business
+      section:
+        id: address
+        label: Address
+      type: PHONE
+    - id: username
+      label: username
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+    - id: reminderq
+      label: reminder question
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+    - id: remindera
+      label: reminder answer
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+    - id: email
+      label: email
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+    - id: website
+      label: website
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+    - id: icq
+      label: ICQ
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+    - id: skype
+      label: skype
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+    - id: aim
+      label: AOL/AIM
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+    - id: yahoo
+      label: Yahoo
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+    - id: msn
+      label: MSN
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+    - id: forumsig
+      label: forum signature
+      section:
+        id: internet
+        label: Internet Details
+      type: STRING
+
+---
+template: Medical Record
+fields:
+  category: MEDICAL_RECORD
+  sections:
+    - id: medication
+      label: medication
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: date
+      label: date
+      type: DATE
+    - id: location
+      label: location
+      type: STRING
+    - id: healthcareprofessional
+      label: healthcare professional
+      type: STRING
+    - id: patient
+      label: patient
+      type: STRING
+    - id: reason
+      label: reason for visit
+      type: STRING
+    - id: medication
+      label: medication
+      section:
+        id: medication
+        label: medication
+      type: STRING
+    - id: dosage
+      label: dosage
+      section:
+        id: medication
+        label: medication
+      type: STRING
+    - id: notes
+      label: medication notes
+      section:
+        id: medication
+        label: medication
+      type: STRING
+
+---
+template: Outdoor License
+fields:
+  category: OUTDOOR_LICENSE
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: name
+      label: full name
+      type: STRING
+    - id: valid_from
+      label: valid from
+      type: DATE
+    - id: expires
+      label: expires
+      type: DATE
+    - id: game
+      label: approved wildlife
+      type: STRING
+    - id: quota
+      label: maximum quota
+      type: STRING
+    - id: state
+      label: state
+      type: STRING
+    - id: country
+      label: country
+      type: STRING
+
+---
+template: Server
+fields:
+  category: SERVER
+  sections:
+    - id: admin_console
+      label: Admin Console
+    - id: hosting_provider_details
+      label: Hosting Provider
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: url
+      label: URL
+      type: STRING
+    - id: username
+      label: username
+      type: STRING
+    - id: password
+      label: password
+      type: CONCEALED
+    - id: admin_console_url
+      label: admin console URL
+      section:
+        id: admin_console
+        label: Admin Console
+      type: STRING
+    - id: admin_console_username
+      label: admin console username
+      section:
+        id: admin_console
+        label: Admin Console
+      type: STRING
+    - id: admin_console_password
+      label: console password
+      section:
+        id: admin_console
+        label: Admin Console
+      type: CONCEALED
+    - id: name
+      label: name
+      section:
+        id: hosting_provider_details
+        label: Hosting Provider
+      type: STRING
+    - id: website
+      label: website
+      section:
+        id: hosting_provider_details
+        label: Hosting Provider
+      type: STRING
+    - id: support_contact_url
+      label: support URL
+      section:
+        id: hosting_provider_details
+        label: Hosting Provider
+      type: STRING
+    - id: support_contact_phone
+      label: support phone
+      section:
+        id: hosting_provider_details
+        label: Hosting Provider
+      type: STRING
+
+---
+template: Bank Account
+fields:
+  category: BANK_ACCOUNT
+  sections:
+    - id: branchInfo
+      label: Branch Information
+  fields:
+    - id: notesPlain
+      label: notesPlain
+      purpose: NOTES
+      type: STRING
+    - id: bankName
+      label: bank name
+      type: STRING
+    - id: owner
+      label: name on account
+      type: STRING
+    - id: accountType
+      label: type
+      type: MENU
+    - id: routingNo
+      label: routing number
+      type: STRING
+    - id: accountNo
+      label: account number
+      type: STRING
+    - id: swift
+      label: SWIFT
+      type: STRING
+    - id: iban
+      label: IBAN
+      type: STRING
+    - id: telephonePin
+      label: PIN
+      type: CONCEALED
+    - id: branchPhone
+      label: phone
+      section:
+        id: branchInfo
+        label: Branch Information
+      type: PHONE
+    - id: branchAddress
+      label: address
+      section:
+        id: branchInfo
+        label: Branch Information
+      type: STRING
+

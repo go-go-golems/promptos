@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+echo "SQLITE VSS README"
+echo ---
+echo
+cat sqlite-vss/README.md
+
+echo
+echo
+echo "SQLITE VSS API REFERENCE"
+cat sqlite-vss/site/api-reference.md
+
+echo
+echo
+echo "SQLITE VSS EXAMPLES"
+cat sqlite-vss/site/getting-started.md
+
+
+echo
+echo
+echo "SQLITE VSS GO BINDINGS"
+cat sqlite-vss/site/using/go.md
+
+echo
+echo
+echo "Here is how to write a go program that uses it. Use the first option with the cgo comment in the source."
+echo "---"
+cat sqlite-vss/bindings/go/README.md
